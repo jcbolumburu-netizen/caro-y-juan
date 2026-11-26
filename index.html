@@ -266,7 +266,7 @@ input[type="text"]:focus { border-color: var(--ink); }
         <p class="lead">Elige un objeto, cómpralo directo en su tienda y despáchalo a la casa de la mamá de la novia. Después marca <mark class="hl">“Ya lo compré”</mark> para que nadie más lo regale.</p>
         <a class="btn" href="#catalogo">Ver los regalos <span aria-hidden="true">→</span></a>
       </div>
-      <figure><img src="img/p24.jpg" alt="Mesa de centro redonda de madera clara frente a un sofá beige"></figure>
+      <figure><img src="p24.jpg" alt="Mesa de centro redonda de madera clara frente a un sofá beige"></figure>
     </div>
   </section>
 
@@ -303,7 +303,7 @@ input[type="text"]:focus { border-color: var(--ink); }
         </ol>
         <button class="btn ghost" type="button" id="openCart2">Abrir mi lista <span aria-hidden="true">→</span></button>
       </div>
-      <figure><img src="img/p21.jpg" alt="Mueble bajo de madera con puertas de ratán, un jarrón y una planta"></figure>
+      <figure><img src="p21.jpg" alt="Mueble bajo de madera con puertas de ratán, un jarrón y una planta"></figure>
     </div>
   </section>
 </main>
@@ -359,7 +359,7 @@ input[type="text"]:focus { border-color: var(--ink); }
     { id: "rack", name: "Rack Mariane", store: "Amoblé", cat: "Living", price: 449900, url: "https://amoble.cl/rack-mariane-pbufrac0032.html", img: "p19" },
     { id: "sitial", name: "Sitial Osorno", store: "Creado en Chile", cat: "Living", price: 367000, url: "https://creadoenchile.cl/collections/regalos-de-matrimonio/products/sitial-osorno", img: "p10", note: "Se fabrica a pedido." },
     { id: "wanko", name: "Wanko, asiento mapuche en madera nativa", store: "Artesanías de Chile", cat: "Living", price: null, soldout: true, url: "https://artesaniasdechile.cl/producto/wanko-asiento-tradicional-mapuche-tallado-en-madera-nativa/", img: "p5", note: "Tallado en madera nativa." },
-    { id: "martino", name: "Silla Martino natural", store: "Amoblé", cat: "Comedor", price: 149900, url: "https://amoble.cl/silla-martino-natural-psilmad0119.html", img: null },
+    { id: "martino", name: "Silla Martino natural", store: "Amoblé", cat: "Comedor", price: 149900, url: "https://amoble.cl/silla-martino-natural-psilmad0119.html", img: "a13" },
     { id: "breuer", name: "Silla Breuer madera y ratán", store: "Klik Muebles", cat: "Comedor", price: 74990, url: "https://www.klikmuebles.cl/products/silla-breuer-madera-y-rattan-madera?variant=47462971474069", img: "p15" },
     { id: "caceres", name: "Taburete Cáceres bajo", store: "Amoblé", cat: "Comedor", price: 179990, url: "https://amoble.cl/taburete-caceres-bajo-ptabbar0080.html", img: "p20" },
     { id: "zuri-silla", name: "Silla Zuri teca", store: "Amoblé", cat: "Terraza", price: 59900, ref: true, url: "https://amoble.cl/silla-zuri-teca-drift-psilter0107.html", img: "p18", note: "Plegable, en teca. Precio referencial." },
@@ -425,7 +425,7 @@ input[type="text"]:focus { border-color: var(--ink); }
   }
   function cardHtml(p) {
     var gifted = isGifted(p), mine = !!S.done[p.id], inCart = !!S.cart[p.id], gone = gifted || mine;
-    var ph = p.img ? '<img src="img/' + p.img + '.jpg" alt="' + esc(p.name) + '" loading="lazy">' : '<div class="noimg">' + (p.tbd ? "Modelo por definir" : "Imagen en la tienda") + "</div>";
+    var ph = p.img ? '<img src="' + p.img + '.jpg" alt="' + esc(p.name) + '" loading="lazy">' : '<div class="noimg">' + (p.tbd ? "Modelo por definir" : "Imagen en la tienda") + "</div>";
     var overlay = "";
     if (gifted) overlay = '<div class="ribbon">Ya regalado<small>Gracias, ya lo tiene Caro y Juan</small></div>';
     else if (mine) overlay = '<div class="ribbon">Regalado por ti<small>Falta que Caro y Juan lo confirmen</small></div>';
@@ -477,7 +477,7 @@ input[type="text"]:focus { border-color: var(--ink); }
   }
 
   function lineHtml(p, bought) {
-    var thImg = p.img ? '<img src="img/' + p.img + '.jpg" alt="">' : "";
+    var thImg = p.img ? '<img src="' + p.img + '.jpg" alt="">' : "";
     var th = bought ? '<div class="th">' + thImg + "</div>" : '<a class="th" href="' + esc(linkOf(p)) + '" target="_blank" rel="noopener" aria-label="' + esc(goLabel(p)) + ": " + esc(p.name) + '">' + thImg + "</a>";
     return '<div class="line' + (bought ? " bought" : "") + '">' + th + "<div>" +
       '<span class="store">' + esc(p.store) + "</span><h4>" + esc(p.name) + "</h4>" +
